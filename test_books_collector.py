@@ -47,7 +47,7 @@ class TestBooksCollector:
         book.add_new_book('Клуб любителей книг и пирогов из картофельных очистков')
         assert len(book.books_genre) < 1
 
-    def test_add_genre_not_in_genre_list(self, add_book):
+    def test_set_book_genre_not_in_genre_list(self, add_book):
         add_book.set_book_genre(data.BOOK_TITLE,'Приключения')
         book_genre = add_book.get_book_genre(data.BOOK_TITLE)
         assert book_genre == ''
