@@ -51,3 +51,11 @@ class TestBooksCollector:
         add_book.set_book_genre(data.BOOK_TITLE,'Приключения')
         book_genre = add_book.get_book_genre(data.BOOK_TITLE)
         assert book_genre == ''
+
+    def test_get_books_genre(self, add_some_books):
+        books_genre = add_some_books.get_books_genre()
+        assert books_genre == data.DICT_BOOKS
+
+    def test_get_list_of_favorites_books(self, book_in_favorites):
+        books_in_favorites = book_in_favorites.get_list_of_favorites_books()
+        assert books_in_favorites == [data.BOOK_TITLE]

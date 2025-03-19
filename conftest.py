@@ -36,3 +36,8 @@ def select_book_for_children():
         if value != 'Ужасы' and value != 'Детективы':
             select_books.append(key)
     return select_books
+
+@pytest.fixture
+def book_in_favorites(add_book):
+    add_book.add_book_in_favorites(data.BOOK_TITLE)
+    return add_book
